@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
 @section('page-content')
-    <form action="{{ route('comics.store') }}" method="POST">
+<div class="container bg-dark-subtle">
+    <h1 class="text-center mt-3">Inserisci i dati nei campi</h1>
+    <form action="{{ route('comics.store') }}" method="POST"  class="my-4">
     @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Titolo fumetto*</label>
@@ -9,7 +11,7 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione*</label>
-            <textarea class="form-control" id="description" name="description" maxlength="100" required></textarea>
+            <textarea class="form-control" id="description" name="description" maxlength="250" required></textarea>
         </div>
         {{-- <div class="mb-3">
             <label for="thumb" class="form-label">Immagine</label>
@@ -17,7 +19,7 @@
         </div> --}}
         <div class="mb-3">
             <label for="price" class="form-check-label">Prezzo*</label>
-            <input type="number" class="form-check-input" id="price" name="price" maxlength="50" required>
+            <input type="number" class="form-control" id="price" name="price" maxlength="50" required>
         </div>
         <div class="mb-3">
             <label for="series" class="form-label">Serie del fumetto*</label>
@@ -35,7 +37,9 @@
                 <option value="comic book">comic book</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Invia</button>
+        <button type="submit" class="btn btn-primary me-3">Invia</button>
         <button type="reset" class="btn btn-secondary">Reset</button>
     </form>
+    <span>Legenda: * - Campo obbligatorio</span>
+</div>
 @endsection
