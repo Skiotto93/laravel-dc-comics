@@ -5,8 +5,8 @@
     <div class="container">        
         @foreach ($comics as $comic) 
         <div class="d-inline-flex flex-wrap">
-            <div class="card flex-wrap mb-3">
-                <img src="{{$comic->thumb}}" class="card-img-top w-auto" alt="{{$comic->title}}">
+            <div class="card flex-wrap mb-3" style="max-width: 200px">
+                <img src="{{$comic->thumb}}" class="card-img-top w-auto" alt="{{$comic->title}}" style="object-fit: cover">
                 <div class="card-body">
                     <h5 class="card-title">{{$comic->title}}</h5>
                     {{-- <p class="card-text">{{$comic->description}}</p> --}}
