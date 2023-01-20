@@ -92,7 +92,7 @@ class ComicController extends Controller
         // aggiorno la resource
         $comic->update($data);
         // redirect alla pagina iniziale
-        return redirect()->route('comics.show', $comic);
+        return redirect()->route('comics.index');
     }
 
     /**
