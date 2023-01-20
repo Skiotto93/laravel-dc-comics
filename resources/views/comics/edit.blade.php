@@ -39,7 +39,7 @@
                 <option value="comic book" {{ $comic->type === 'comic book' ? 'selected' : null }}>comic book</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary me-3">Invia</button>
+        <button type="submit" class="btn btn-primary me-3">Salva</button>
         <button type="reset" class="btn btn-secondary">Reset</button>
     </form>
     <span>Legenda: * - Campo obbligatorio</span>
