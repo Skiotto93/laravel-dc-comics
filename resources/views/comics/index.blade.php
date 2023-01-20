@@ -5,12 +5,12 @@
         <h1>Home Fumetti</h1>
         @foreach ($comics as $comic)
             
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+        <div class="card">
+            <img src="" class="card-img-top" alt="">
             <div class="card-body">
                 <h5 class="card-title">{{$comic->title}}</h5>
                 {{-- <p class="card-text">{{$comic->description}}</p> --}}
-                <span>{{$comic->price}}</span>
+                <span>{{$comic->price}} €</span>
                 <p>{{$comic->series}}</p>
                 <p>{{$comic->sale_date}}</p>
                 <p>{{$comic->type}}</p>

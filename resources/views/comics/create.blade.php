@@ -9,7 +9,7 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione*</label>
-            <input type="text" class="form-control" id="description" name="description" maxlength="100" required>
+            <textarea class="form-control" id="description" name="description" maxlength="100" required></textarea>
         </div>
         {{-- <div class="mb-3">
             <label for="thumb" class="form-label">Immagine</label>
