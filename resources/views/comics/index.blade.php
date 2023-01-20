@@ -15,7 +15,13 @@
                     <p>{{$comic->sale_date}}</p>
                     <p>{{$comic->type}}</p>
                     <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary w-100">Vai a Descrizione</a>
-                    <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning mt-2 w-100">Modifica card</a>
+                    <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning my-2 w-100">Modifica card</a>
+                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    @csrf
+                    {{-- Aggiungo il metodo da Blade --}}
+                    @method('DELETE')
+                        <button type="submit" class="btn btn-danger w-100">Cancella</button>
+                    </form>
                 </div>
             </div>
         </div>
