@@ -14,7 +14,8 @@
                     <p>{{$comic->series}}</p>
                     <p>{{$comic->sale_date}}</p>
                     <p>{{$comic->type}}</p>
-                    <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">Vai a Descrizione</a>
+                    <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary w-100">Vai a Descrizione</a>
+                    <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning mt-2 w-100">Modifica card</a>
                 </div>
             </div>
         </div>
