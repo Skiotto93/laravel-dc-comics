@@ -25,7 +25,7 @@
         </div> --}}
         <div class="mb-3">
             <label for="price" class="form-check-label">Prezzo *</label>
-            <input type="number" class="form-control @error('number') is-invalid @enderror" id="price" name="price" maxlength="50" value="{{ old('price') }}">
+            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" maxlength="50" value="{{ old('price') }}">
             @error('number')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -47,8 +47,8 @@
         <div class="mb-3">
             <label for="type" class="form-label">Tipologia fumetto *</label>
             <select class="form-select @error('type') is-invalid @enderror" id="type" name="type" required>
-                <option value="graphic novel" {{ old('type' === 'graphic novel' ? 'selected' : null) }}>graphic novel</option>
-                <option value="comic book" {{ old('type' === 'graphic novel' ? 'selected' : null) }}>comic book</option>
+                <option value="graphic novel" {{ old('type') === 'graphic novel' ? 'selected' : null }}>graphic novel</option>
+                <option value="comic book" {{ old('type') === 'comic book' ? 'selected' : null }}>comic book</option>
             </select>
             @error('type')
                 <div class="alert alert-danger">{{ $message }}</div>
