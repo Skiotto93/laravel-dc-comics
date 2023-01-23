@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title', 50);
             $table->text('description', 250);
             $table->string('thumb')->nullable();
-            $table->unsignedTinyInteger('price')->nullable();
+            $table->decimal('price', 5,2);
             $table->string('series', 50);
             $table->date('sale_date');
             $table->string('type', 50);

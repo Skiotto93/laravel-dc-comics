@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {   
@@ -41,11 +42,14 @@ class ComicController extends Controller
         $request->validate([
             'title' => 'required|string|max:50',
             'description' => 'required|string|min:5|max:250',
-            'thumb' => 'nullable|string|min:5|max:250',
-            'price' => 'nullable|unsignedTinyInteger|min:1',
+            'thumb' => 'nullable|url',
+            'price' => 'required|decimal:2|min:1',
             'series' => 'required|string|min:1',
             'sale_date' => 'required|date',
-            'type' => 'required|string|min:1|max:50',
+            'type' => [
+                'required',
+                Rule::in(['graphic novel', 'comic book']),
+            ],
         ]);
 
         $data = $request->all();
@@ -97,6 +101,18 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate([
+            'title' => 'required|string|max:50',
+            'description' => 'required|string|min:5|max:250',
+            'thumb' => 'nullable|url',
+            'price' => 'required|decimal:2|min:1',
+            'series' => 'required|string|min:1',
+            'sale_date' => 'required|date',
+            'type' => [
+                'required',
+                Rule::in(['graphic novel', 'comic book']),
+            ],
+        ]);
         // recupero i dati
         $data = $request->all();
         // aggiorno la resource
