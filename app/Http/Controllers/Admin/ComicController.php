@@ -7,7 +7,7 @@ use App\Models\Comic;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
-{
+{   
     /**
      * Display a listing of the resource.
      *
@@ -38,6 +38,16 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|string|max:50',
+            'description' => 'required|string|min:5|max:250',
+            'thumb' => 'nullable|string|min:5|max:250',
+            'price' => 'nullable|unsignedTinyInteger|min:1',
+            'series' => 'required|string|min:1',
+            'sale_date' => 'required|date',
+            'type' => 'required|string|min:1|max:50',
+        ]);
+
         $data = $request->all();
         
         $new_comic = new Comic();

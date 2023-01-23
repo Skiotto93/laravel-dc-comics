@@ -19,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('comics', ComicController::class);
+Route::get('comics/create', [ComicController::class, 'create']);
+Route::post('comics', [ComicController::class, 'store']);

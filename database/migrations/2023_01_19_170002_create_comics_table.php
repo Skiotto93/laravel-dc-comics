@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
             $table->string('title', 50);
-            $table->text('description', 100);
+            $table->text('description', 250);
             $table->string('thumb')->nullable();
             $table->unsignedTinyInteger('price')->nullable();
             $table->string('series', 50);

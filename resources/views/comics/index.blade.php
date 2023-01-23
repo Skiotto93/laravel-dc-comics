@@ -18,6 +18,7 @@
                     <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning my-2 w-100">Modifica card</a>
                     <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                     @csrf
+                    {{-- <script src="{{asset('message.js') }}"></script> --}}
                     {{-- Aggiungo il metodo da Blade --}}
                     @method('DELETE')
                         <button type="submit" class="btn btn-danger w-100">Cancella</button>
@@ -26,6 +27,7 @@
             </div>
         </div>
         @endforeach
+        
     </div>
     <div class="container">
         <a class="btn btn-success" href="{{ route('comics.create') }}">Crea una card</a>
